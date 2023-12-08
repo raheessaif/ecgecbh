@@ -2,17 +2,17 @@
 
 # Python3 code for Max 
 # Water Container
-def mostWater(A):
+def mostWater(height):
     left = 0
     right = len(A) -1
     area = 0
      
     while left < right:
 
-        area = max(area, min(A[left], 
-                        A[right]) * (right - left))
+        area = max(area, min(height[left], 
+                        height[right]) * (right - left))
      
-        if A[left] < A[right]:
+        if height[left] < height[right]:
             left += 1
         else:
             right -= 1
@@ -20,7 +20,7 @@ def mostWater(A):
  
 n = int(input('Enter the number of vertical bars: '))
 print('Enter the heights of vertical bars:\n')
-heights = []
+height = []
 for i in range(n):
     i = int(input('>>'))
     heights.append(i)
